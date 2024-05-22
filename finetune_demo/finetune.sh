@@ -35,7 +35,7 @@ if [[ $type_config_lora == "high" ]]; then
 fi
 
 if [[ $path_data == "data/cognition" ]]; then
-    path_data_fix= $path_data
+    path_data_fix=$path_data
 else
     python convert.py $path_data
 fi
