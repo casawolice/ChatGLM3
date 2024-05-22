@@ -22,19 +22,19 @@ type_config_modelpath=${2:-"local"}
 type_config_lora=${3:-"low"}
 path_data_fix="${path_data}_fix"
 
-if [[ $type_config_modelpath == "modelscope" ]]; then
+if [ "$type_config_modelpath" == "modelscope"  ]; then
 
     config_modelpath="/mnt/workspace/.cache/modelscope/ZhipuAI/chatglm3-6b"
 
 fi
 
-if [[ $type_config_lora == "high" ]]; then
+if [ "$type_config_lora" == "high" ]; then
 
     config_lora="configs/lora1.yaml"
 
 fi
 
-if [[ $path_data == "data/cognition" ]]; then
+if [ "$path_data" == "data/cognition" ]; then
     path_data_fix=$path_data
 else
     python convert.py $path_data
