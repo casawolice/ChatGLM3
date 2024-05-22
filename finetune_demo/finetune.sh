@@ -40,4 +40,5 @@ else
     python convert.py $path_data
 fi
 
-CUDA_VISIBLE_DEVICES=0 NCCL_P2P_DISABLE="1" NCCL_IB_DISABLE="1" python finetune_hf.py $path_data_fix $config_modelpath $config_lora
+str="CUDA_VISIBLE_DEVICES=0 NCCL_P2P_DISABLE="1" NCCL_IB_DISABLE="1" python finetune_hf.py $path_data_fix $config_modelpath $config_lora"
+echo $str
