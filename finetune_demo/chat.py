@@ -28,14 +28,14 @@ def chat():
     init()
     history = []  # 用于存储对话历史
     while True:
-        user_input = input("Human：")
+        user_input = input("Human：").encode('utf-8', errors='ignore').decode('utf-8')
         if user_input.lower() == 'exit':
             break
         history.append(user_input)  # 将用户输入添加到历史中
         response, history = global_model.chat(global_tokenizer,
                                               user_input,
-                                              history=history)  # 处理用户输入并生成响应
-        print(f"AI:${response}")
+                                              history=[])  # 处理用户输入并生成响应
+        print(f"AI:{response}")
         history.append(response)  # 将响应添加到历史中
 
 

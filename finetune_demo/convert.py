@@ -5,7 +5,7 @@ import sys
 
 data_src = "data/AdvertiseGen"
 
-if sys.argv[1]:
+if len(sys.argv) > 1:
     data_src = sys.argv[1]
 
 data_fix = data_src + "_fix"
